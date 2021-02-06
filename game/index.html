@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <title>Paper Rock Scissors</title>
+    <meta charset='utf-8'>
+    <link href=data:, rel=icon>
+    <style>
+        #outcome {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h1>Paper Rock Scissors</h1>
+<h2>By: Sean Bollin</h2>
+<div>
+    <p>Your choice?</p>
+    <input type='radio' value='paper' name='selection' checked> Paper
+    <input type='radio' value='rock' name='selection'> Rock
+    <input type='radio' value='scissors' name='selection'> Scissors
+
+    <button id='goBtn'>Go!</button>
+
+    <div id='outcome'>
+        Your opponent picked <span id='pickMsg'></span>.
+        <div id='winMsg' class='msg'>You win!</div>
+        <div id='tieMsg' class='msg'>You tied!</div>
+        <div id='loseMsg' class='msg'>You lose!</div>
+    </div>
+    <script>
+        let goBtn = document.querySelector('#goBtn');
+        let pickMsg = document.querySelector('#pickMsg');
+        let winMsg = document.querySelector('#winMsg');
+        let loseMsg = document.querySelector('#loseMsg');
+        let tieMsg = document.querySelector('#tieMsg');
+
+        goBtn.addEventListener('click', go);
+
+        function go() {
+
+            let playerSelection = document.querySelector('input[name="selection"]:checked').value;
+
+            let options = ['rock', 'paper', 'scissors'];
+            let random = Math.floor(Math.random() * 3);
+            let computerSelection = options[random];
+
+            let win = false;
+
+            if (playerSelection === 'rock' && computerSelection === 'scissors') {
+                win = true;
+            } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+                win = true;
+            } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+                win = true;
+            }
+
+            let tie = computerSelection === playerSelection;
+
+            outcome.style.display = 'block';
+
+            pickMsg.innerHTML = computerSelection;
+
+            winMsg.style.display = 'none';
+            tieMsg.style.display = 'none';
+            loseMsg.style.display = 'none';
+
+            if (win) {
+                winMsg.style.display = 'block';
+            } else if (tie) {
+                tieMsg.style.display = 'block';
+            } else {
+                loseMsg.style.display = 'block';
+            }
+        }
+    </script>
+</div>
+</body>
+</html>
