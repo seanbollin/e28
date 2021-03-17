@@ -48,7 +48,22 @@ const Game = {
             this.guesses.push({"playerChoice": this.playerChoice, "computerChoice": computerChoice, "result": result});
         }
     }
-}
+};
+
+const ScoreDetail = {
+    name: 'ScoreDetail',
+    data() {
+      return {
+
+      }
+    },
+    template: '#score-detail',
+    props: ['playerName', 'score']
+};
 
 // Create a new Vue instance using our options
-const app = Vue.createApp(Game).mount('#app');
+const app = Vue.createApp(Game);
+
+app.component('score-detail', ScoreDetail);
+
+app.mount('#app');

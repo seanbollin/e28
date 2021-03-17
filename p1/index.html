@@ -13,9 +13,12 @@
 <body>
 <h1>Paper Rock Scissors</h1>
 
-<div id='app'>
+<div id="app">
     <p>Your choice?</p>
-    <p>Player score: {{ playerScore }} Computer score: {{ computerScore }}</p>
+
+    <score-detail player-name="Player" v-bind:score="playerScore"></score-detail>
+    <score-detail player-name="Computer" v-bind:score="computerScore"></score-detail>
+
     <form>
         <input id="paper" type="radio" v-model="playerChoice" value="paper">
         <label for="paper">Paper</label>
@@ -28,6 +31,12 @@
     <button v-on:click="reset">Reset</button>
     <p>{{ guesses }}</p>
 </div>
+
+<script type="text/x-template" id="score-detail">
+    <div>
+        <p>{{ playerName }} score: {{ score }}</p>
+    </div>
+</script>
 </body>
 
 </html>
