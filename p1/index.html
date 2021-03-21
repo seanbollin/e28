@@ -1,23 +1,31 @@
 <!doctype html>
-<html lang='en'>
+<html lang="en">
 
 <head>
-    <title>Paper Rock Scissors</title>
-    <meta charset='utf-8'>
+    <title>Paper, Rock, Scissors</title>
+    <meta charset="utf-8">
     <link href=data:, rel=icon>
-
-    <script src='https://unpkg.com/vue@next' defer></script>
-    <script src='script.js' defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 <h1>Paper Rock Scissors</h1>
 
-<div id="app">
-    <p>Your choice?</p>
+<div id="info">
+    <p><em>Paper, Rock, Scissors</em> is a strategical game that pits you against the computer. Select paper, rock, or scissors below and then click Go!</p>
+    <p>Paper beats rock, rock beats scissors, and scissors beat paper. If both players select the same then the result is a tie.</p>
+    <p>Click Reset to clear all Game History.</p>
+</div>
 
-    <score-detail player-name="Player" v-bind:score="playerScore"></score-detail>
-    <score-detail player-name="Computer" v-bind:score="computerScore"></score-detail>
+<div id="app">
+    <div id="score-container">
+        <score-detail player-name="Player" v-bind:score="playerScore"></score-detail>
+        <score-detail player-name="Computer" v-bind:score="computerScore"></score-detail>
+    </div>
+
+    <p>Please select your choice:</p>
 
     <form>
         <input id="paper" type="radio" v-model="playerChoice" value="paper">
@@ -27,13 +35,27 @@
         <input id="scissors" type="radio" v-model="playerChoice" value="scissors">
         <label for="scissors">Scissors</label>
     </form>
-    <button v-on:click="go">Go!</button>
-    <button v-on:click="reset">Reset</button>
-    <p>{{ guesses }}</p>
+
+    <div id="button-box">
+        <button v-on:click="go">Go!</button>
+        <button v-on:click="reset">Reset</button>
+    </div>
+
+    <div id="winner" v-bind:class="{ playerWon: playerWon, playerLost: playerLost, tie: tie }" v-if="guesses.length > 0">
+        <p v-if="playerWon">You win!</p>
+        <p v-if="playerLost">You lose!</p>
+        <p v-if="tie">It was a tie!</p>
+    </div>
+    <h2>Game History</h2>
+    <ul id="game-history">
+        <li v-for="guess in guesses">
+            Your choice: {{ guess.playerChoice }} -- Computer choice: {{ guess.computerChoice }} -- Result: {{ guess.result }}
+        </li>
+    </ul>
 </div>
 
 <script type="text/x-template" id="score-detail">
-    <div>
+    <div class="score">
         <p>{{ playerName }} score: {{ score }}</p>
     </div>
 </script>

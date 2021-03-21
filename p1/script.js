@@ -1,4 +1,3 @@
-// Define the options of our application
 const Game = {
     data() {
         return {
@@ -6,6 +5,9 @@ const Game = {
             playerScore: 0,
             computerScore: 0,
             guesses: [],
+            playerWon: false,
+            playerLost: false,
+            tie: false,
             computerOptions: ['paper', 'rock', 'scissors']
         }
     },
@@ -14,10 +16,13 @@ const Game = {
           this.guesses = [];
           this.playerScore = 0;
           this.computerScore = 0;
+          this.playerWon = false;
+          this.playerLost = false;
+          this.tie = false;
         },
         go: function (event) {
             const computerChoice = this.computerOptions[Math.floor(Math.random() * this.computerOptions.length)];
-            console.log(computerChoice);
+
             let result = 'tie';
             if (this.playerChoice === 'paper') {
                 if (computerChoice === 'rock') {
@@ -39,13 +44,25 @@ const Game = {
                 }
             }
 
+            this.playerWon = false;
+            this.playerLost = false;
+            this.tie = false;
+
             if (result == 'win') {
                 this.playerScore += 1;
+                this.playerWon = true;
             } else if (result == 'loss') {
                 this.computerScore += 1;
+                this.playerLost = true;
+            } else {
+                this.tie = true;
             }
 
-            this.guesses.push({"playerChoice": this.playerChoice, "computerChoice": computerChoice, "result": result});
+            this.guesses.push({
+                "playerChoice": this.playerChoice,
+                "computerChoice": computerChoice,
+                "result": result
+            });
         }
     }
 };
@@ -61,7 +78,6 @@ const ScoreDetail = {
     props: ['playerName', 'score']
 };
 
-// Create a new Vue instance using our options
 const app = Vue.createApp(Game);
 
 app.component('score-detail', ScoreDetail);
