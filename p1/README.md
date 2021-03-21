@@ -5,7 +5,3 @@
 ## Outside resources
 
 None
-
-## Notes for instructor
-
-None
