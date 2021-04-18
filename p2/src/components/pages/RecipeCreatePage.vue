@@ -52,7 +52,5 @@
 </script>
 
 <style scoped>
-    #inputs {
-        text-align: left;
-    }
+
 </style>

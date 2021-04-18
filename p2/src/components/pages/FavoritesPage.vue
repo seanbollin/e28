@@ -9,6 +9,7 @@
         >
             <show-recipe
                     v-bind:recipe="favorite"
+                    v-bind:detailed="false"
             ></show-recipe>
         </router-link>
     </div>

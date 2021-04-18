@@ -1,17 +1,14 @@
 <template>
     <h1>Jimbo's Recipes</h1>
     <div id="recipes">
-        <router-link
-                class="recipe-link"
-                v-for="recipe in recipes"
-                v-bind:to="'/recipe/' + recipe.id"
-                v-bind:key="recipe.id"
-        >
+        <div v-bind:key="recipe.id" v-for="recipe in recipes">
             <show-recipe
                     v-bind:recipe="recipe"
                     v-bind:detailed="false"
             ></show-recipe>
-        </router-link>
+            <router-link v-bind:to="'/recipe/' + recipe.id">Details</router-link>
+            <button v-on:click="addFavorite(recipe)">Add Favorite</button>
+        </div>
     </div>
 </template>
 
@@ -31,6 +28,11 @@ export default {
     data() {
         return {};
     },
+    methods: {
+        addFavorite(favorite) {
+            this.$emit('add-favorite', favorite);
+        }
+    }
 };
 </script>
 
