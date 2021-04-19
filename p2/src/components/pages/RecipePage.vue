@@ -31,7 +31,7 @@ export default {
     computed: {
         recipe() {
             return this.recipes.filter((recipe) => {
-                return recipe.id === this.id;
+                return recipe.id == this.id;
             }, this.id)[0];
         },
         recipeNotFound() {
