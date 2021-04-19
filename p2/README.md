@@ -3,16 +3,29 @@
 + Production URL: <http://e28p2.sean-bollin.com>
 
 ## Pages summary
-*List the "pages" of your application*
++ Home
++ Recipes
++ Add a Recipe
++ Recipe Details
++ Mouth-Watering Favorites
 
 ## SFC summary
-*List the SFCs of your application*
++ FavoritesPage
++ HomePage
++ RecipeCreatePage
++ RecipePage
++ RecipesPage
++ ShowRecipe
++ App
   
 ## Server interaction
-*List the features in your application that are persisting and retrieving data from the server*
++ Recipes retrieves a list of recipes from the API
++ Add a Recipe allows you to persist data against the API
++ Recipe details page views data from the API
 
 ## Outside resources
-*Your list of outside resources go here*
++ StackOverflow
++ Vue official documentation
 
 ## Notes for instructor
-*Any notes for me to refer to while grading; if none, omit this section*
++ Mouth-watering favorites does not interact with the API, it is just in-memory
