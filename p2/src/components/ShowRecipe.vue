@@ -1,9 +1,8 @@
 <template>
   <div class="show-recipe">
-    <div class="name">{{ recipe.name }}</div>
-    <div class="description">{{ recipe.description }}</div>
+    <div class="name"><strong>{{ recipe.name }}</strong></div>
+    <div class="description"><em>{{ recipe.description }}</em></div>
     <div class="ingredients">Ingredients: {{ recipe.ingredients }}</div>
-    <div v-if="detailed">Detailed view</div>
   </div>
 </template>
 

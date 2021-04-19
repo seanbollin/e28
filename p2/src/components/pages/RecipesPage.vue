@@ -6,7 +6,7 @@
                     v-bind:recipe="recipe"
                     v-bind:detailed="false"
             ></show-recipe>
-            <router-link v-bind:to="'/recipe/' + recipe.id">Details</router-link>
+            <router-link v-bind:to="'/recipe/' + recipe.id">More Details</router-link>
             <button v-on:click="addFavorite(recipe)">Add Favorite</button>
         </div>
     </div>

@@ -22,3 +22,11 @@ p {
 .show-recipe {
     margin-bottom: 10px;
 }
+
+#recipes button {
+    margin-left: 5px;
+}
+
+#recipes .name {
+    margin-top: 10px;
+}
