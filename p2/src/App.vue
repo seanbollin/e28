@@ -52,5 +52,4 @@ export default {
 
 <style src='@/assets/css/jimbos.css'></style>
 
-<style>
-</style>
+<style></style>

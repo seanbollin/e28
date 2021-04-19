@@ -7,13 +7,14 @@
                     v-bind:detailed="false"
             ></show-recipe>
             <router-link v-bind:to="'/recipe/' + recipe.id">More Details</router-link>
-            <button v-on:click="addFavorite(recipe)">Add Favorite</button>
+            <button v-on:click="addFavorite(recipe)">Add to Favorites</button>
         </div>
     </div>
 </template>
 
 <script>
 import ShowRecipe from "@/components/ShowRecipe.vue";
+
 export default {
     inheritAttrs: false,
     components: {
@@ -36,6 +37,4 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
+<style></style>

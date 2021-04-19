@@ -12,6 +12,7 @@
 
 <script>
 import ShowRecipe from "@/components/ShowRecipe.vue";
+
 export default {
     inheritAttrs: false,
     components: {
@@ -25,10 +26,8 @@ export default {
     },
     data() {
         return {};
-    },
+    }
 };
 </script>
 
-<style>
-
-</style>
+<style></style>

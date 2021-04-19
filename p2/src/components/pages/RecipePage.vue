@@ -1,15 +1,11 @@
 <template>
     <div v-if="recipeNotFound">
         <p>Recipe {{ id }} not found.</p>
-        <router-link v-bind:to="'/recipes'"
-        >Go to all recipes</router-link
-        >
+        <router-link v-bind:to="'/recipes'">Go to all recipes</router-link>
     </div>
 
     <div v-else-if="recipe">
-        <show-recipe
-                v-bind:recipe="recipe"
-        ></show-recipe>
+        <show-recipe v-bind:recipe="recipe"></show-recipe>
     </div>
 </template>
 
@@ -35,7 +31,7 @@ export default {
     computed: {
         recipe() {
             return this.recipes.filter((recipe) => {
-                return recipe.id == this.id;
+                return recipe.id === this.id;
             }, this.id)[0];
         },
         recipeNotFound() {
@@ -45,6 +41,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
