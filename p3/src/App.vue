@@ -9,9 +9,7 @@
   <div id="contents">
     <router-view
             v-bind:recipes="recipes"
-            v-bind:favorites="favorites"
             v-on:update-recipes="loadRecipes"
-            v-on:add-favorite="addFavorite"
     ></router-view>
   </div>
 </template>
@@ -23,7 +21,6 @@ export default {
   name: 'App',
   data() {
     return {
-      favorites: [],
       recipes: [],
       links: ['Home', 'Recipes', 'Add a Recipe', 'Mouth-Watering Favorites'],
       paths: {
@@ -38,9 +35,6 @@ export default {
     this.loadRecipes();
   },
   methods: {
-    addFavorite(favorite) {
-      this.favorites.push(favorite);
-    },
     loadRecipes() {
       axios.get("recipe").then((response) => {
         this.recipes = response.data.recipe;

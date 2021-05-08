@@ -18,11 +18,10 @@ export default {
     components: {
         "show-recipe": ShowRecipe,
     },
-    props: {
-        favorites: {
-            type: Array,
-            default: null,
-        },
+    computed: {
+        favorites() {
+            return this.$store.state.favorites;
+        }
     },
     data() {
         return {};

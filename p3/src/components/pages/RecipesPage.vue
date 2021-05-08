@@ -31,7 +31,7 @@ export default {
     },
     methods: {
         addFavorite(favorite) {
-            this.$emit('add-favorite', favorite);
+            this.$store.commit('addFavorite', favorite);
         }
     }
 };
