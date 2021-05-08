@@ -1,0 +1,32 @@
+body {
+    margin: 0px;
+}
+
+#contents {
+    padding: 5px;
+}
+
+#nav {
+    background-color: #ccc;
+    padding: 5px;
+}
+
+#nav a {
+    margin-right: 10px;
+}
+
+p {
+    color: black;
+}
+
+.show-recipe {
+    margin-bottom: 10px;
+}
+
+#recipes button {
+    margin-left: 5px;
+}
+
+#recipes .name {
+    margin-top: 10px;
+}
