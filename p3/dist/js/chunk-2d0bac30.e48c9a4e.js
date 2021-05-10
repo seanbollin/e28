@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0bac30"],{"391e":function(e,o,t){"use strict";t.r(o);var n=t("7a23"),u=Object(n["g"])("h1",null,"Jimbo's Southern-Style Recipe Book",-1),c=Object(n["g"])("p",null,"Welcome to Jimbo's Southern-Style Recipe Book. Here you'll find our list of curated recipes to keep you feeling at home in the deep south. Enjoy your stay!",-1);function i(e,o,t,i,r,l){return Object(n["p"])(),Object(n["d"])("div",null,[u,c])}var r={name:"HomePage"};r.render=i;o["default"]=r}}]);
+//# sourceMappingURL=chunk-2d0bac30.e48c9a4e.js.map

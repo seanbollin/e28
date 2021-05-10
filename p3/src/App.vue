@@ -22,12 +22,13 @@ export default {
   data() {
     return {
       recipes: [],
-      links: ['Home', 'Recipes', 'Add a Recipe', 'Mouth-Watering Favorites'],
+      links: ['Home', 'Recipes', 'Add a Recipe', 'Mouth-Watering Favorites', 'Account'],
       paths: {
         "Home": '/',
         "Recipes": '/recipes',
         "Add a Recipe": '/recipe/new',
-        'Mouth-Watering Favorites': '/favorites'
+        'Mouth-Watering Favorites': '/favorites',
+        'Account': '/account'
       }
     }
   },
