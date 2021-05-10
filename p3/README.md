@@ -1,31 +1,17 @@
-# Project 2
+# Project 3
 + By: Sean Bollin
-+ Production URL: <http://e28p2.sean-bollin.com>
-
-## Pages summary
-+ Home
-+ Recipes
-+ Add a Recipe
-+ Recipe Details
-+ Mouth-Watering Favorites
-
-## SFC summary
-+ FavoritesPage
-+ HomePage
-+ RecipeCreatePage
-+ RecipePage
-+ RecipesPage
-+ ShowRecipe
-+ App
-  
-## Server interaction
-+ Recipes retrieves a list of recipes from the API
-+ Add a Recipe allows you to persist data against the API
-+ Recipe details page views data from the API
++ Production URL: <http://e28p3.sean-bollin.com>
 
 ## Outside resources
-+ StackOverflow
-+ Vue official documentation
+* Cypress documentation on first() https://docs.cypress.io/api/commands/first
 
-## Notes for instructor
-+ Mouth-watering favorites does not interact with the API, it is just in-memory
+## How is authentication being used in your application?
+* Access denied when user tries to access the Add Recipe page unless they are logged in
+
+## What data entities of your application are being managed via Vuex?
+* Favorites
+
+## E2E Testing screenshot
+*Include a screenshot showing the results of running all your E2E tests. This screenshot *must* be present to receive credit for the E2E testing requirement of this project. Below is an example screenshot of what is expected.*
+
+![Jimbos passing E2E tests](https://raw.githubusercontent.com/seanbollin/e28/main/p3/cypress.PNG)
