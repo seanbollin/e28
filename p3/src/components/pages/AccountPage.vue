@@ -26,7 +26,7 @@
                 <button v-on:click="login">Login</button>
                 <ul v-if="errors">
                     <li class="error" v-for="(error, index) in errors" :key="index">
-                        {{ error }}
+                        {{ error[0] }}
                     </li>
                 </ul>
             </div>
@@ -56,7 +56,7 @@
 
                 <ul v-if="errors">
                     <li class="error" v-for="(error, index) in errors" :key="index">
-                        {{ error }}
+                        {{ error[0] }}
                     </li>
                 </ul>
             </div>

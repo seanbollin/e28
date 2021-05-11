@@ -30,3 +30,12 @@ p {
 #recipes .name {
     margin-top: 10px;
 }
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+    margin-top: 5px;
+}

@@ -3,10 +3,10 @@
         <h1>Think You Can Make Somethin' Good?</h1>
 
         <div id="inputs">
-            <label for="name">Name</label>
+            <label for="name">Name (min. 3, max. 100)</label>
             <input type="text" v-model="recipe.name" id="name" v-on:blur="validate"/>
             <br />
-            <label for="description">Description</label>
+            <label for="description">Description (max. 100)</label>
             <textarea v-model="recipe.description" id="description" v-on:blur="validate"></textarea>
             <br />
             <label for="ingredients">Ingredients</label>
@@ -15,9 +15,13 @@
 
         <button v-on:click="addRecipe">Add Recipe</button>
 
-        <div v-if="success">Your recipe was added</div>
+        <div class="success" v-if="success">Your recipe was added</div>
 
-        <div class="errors">{{ errors }}</div>
+        <ul v-if="errors">
+            <li class="error" v-for="(error, index) in errors" :key="index">
+                {{ error[0] }}
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -39,6 +43,7 @@ export default {
     },
     methods: {
         addRecipe() {
+            this.success = false;
             if (this.validate()) {
                 axios.post("/recipe", this.recipe).then((response) => {
                     if (response.data.errors) {
@@ -47,6 +52,7 @@ export default {
                     } else {
                         this.$emit("update-recipes");
                         this.success = true;
+                        this.recipe = {};
                     }
                 });
             }
