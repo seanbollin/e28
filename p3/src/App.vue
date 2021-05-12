@@ -5,6 +5,7 @@
             v-bind:key="link"
             v-bind:to="paths[link]"
     >{{ link }}</router-link>
+    <div v-if="userDisplay" class="user">Welcome, {{ userDisplay.name }}</div>
   </div>
   <div id="contents">
     <router-view
@@ -30,6 +31,11 @@ export default {
         'Mouth-Watering Favorites': '/favorites',
         'Account': '/account'
       }
+    }
+  },
+  computed: {
+    userDisplay() {
+      return this.$store.state.user;
     }
   },
   mounted() {

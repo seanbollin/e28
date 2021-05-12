@@ -14,6 +14,7 @@
 ## How is authentication being used in your application?
 * Access denied when user tries to access the Add Recipe page unless they are logged in
 * Registration / Login
+* Displays welcome message only when user is logged in (top-right corner of navbar)
 
 ## What data entities of your application are being managed via Vuex?
 * Mouth-Watering Favorites
